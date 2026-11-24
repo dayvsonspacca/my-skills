@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: just
+
+      # Same Dockerfile as local development: identical PHP version and extensions.
+      - name: Build image, install dependencies
+        run: just setup
+
+      - name: Format, lint, analyse and test
+        run: just check

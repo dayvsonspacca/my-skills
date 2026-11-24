@@ -1,0 +1,17 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
+
+final class {{ class }} extends TestCase
+{
+    #[Test]
+    public function example(): void
+    {
+        self::assertTrue(true);
+    }
+}

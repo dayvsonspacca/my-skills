@@ -1,0 +1,16 @@
+{
+  "name": "dayvsonspacca",
+  "owner": {
+    "name": "dayvsonspacca"
+  },
+  "metadata": {
+    "description": "Personal skills"
+  },
+  "plugins": [
+    {
+      "name": "my-skills",
+      "source": "./",
+      "description": "Personal skills"
+    }
+  ]
+}

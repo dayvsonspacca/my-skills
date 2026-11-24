@@ -1,0 +1,62 @@
+# Every PHP command runs inside the `php` service (serversideup/php): no PHP needed on the host.
+
+export HOST_UID := `id -u`
+export HOST_GID := `id -g`
+
+run := "docker compose run --rm --no-deps php"
+
+# List available recipes
+default:
+    @just --list
+
+# Build the development image
+build:
+    docker compose build
+
+# First run: build image, create .env, composer install, app key
+setup: build
+    @test -f .env || cp .env.example .env
+    {{ run }} composer install --no-interaction
+    @if grep -q '^APP_KEY=$' .env; then {{ run }} php artisan key:generate --ansi; fi
+
+# web-only:start
+# Start the app in the background (http://localhost:8000 by default, see APP_PORT)
+up:
+    docker compose up -d
+
+# Stop the app
+down:
+    docker compose down
+
+# web-only:end
+# Open a shell in the container
+shell:
+    {{ run }} bash
+
+# Run composer, e.g. `just composer require foo/bar`
+composer *args:
+    {{ run }} composer {{ args }}
+
+# Run artisan, e.g. `just artisan make:model Post`
+artisan *args:
+    {{ run }} php artisan {{ args }}
+
+# PHPUnit, e.g. `just test --filter=HealthCheck`
+test *args:
+    {{ run }} composer test -- {{ args }}
+
+# PHPStan (Larastan, level max)
+analyse:
+    {{ run }} composer analyse
+
+# Apply Mago's auto-fixes, then format
+fmt:
+    {{ run }} composer fmt
+
+# Lint with Mago
+lint:
+    {{ run }} composer lint
+
+# Format check + lint + analyse + test (same as CI)
+check:
+    {{ run }} composer check

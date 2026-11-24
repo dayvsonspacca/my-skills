@@ -1,0 +1,17 @@
+services:
+  php:
+    build:
+      context: .
+      target: development
+      args:
+        USER_ID: ${HOST_UID:-1000}
+        GROUP_ID: ${HOST_GID:-1000}
+    volumes:
+      - .:/var/www/html
+    environment:
+      SHOW_WELCOME_MESSAGE: "false"
+      HEALTHCHECK_PATH: /up
+    # web-only:start
+    ports:
+      - "${APP_PORT:-8000}:8080"
+    # web-only:end

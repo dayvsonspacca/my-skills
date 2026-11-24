@@ -1,0 +1,11 @@
+php-version = "__PHP_VERSION__"
+
+[source]
+paths = ["app", "bootstrap", "config", "database", "routes", "tests", "public"]
+excludes = ["bootstrap/cache"]
+
+[formatter]
+preset = "pint"
+
+[linter]
+integrations = ["laravel", "phpunit"]
