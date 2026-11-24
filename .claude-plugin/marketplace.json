@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "my-skills",
+      "name": "dayvsonspacca",
       "source": "./",
       "description": "Personal skills"
     }
