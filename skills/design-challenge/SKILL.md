@@ -27,7 +27,7 @@ Size it by the difficulty the user asked for. If they didn't say, use medium.
 
 ## 2. The black-box rule
 
-Every requirement must be checkable from outside the system by someone who doesn't know what it's built with, using only a client, a clock, a load generator and the power switch. That is what leaves the "how" to the user.
+This rule covers the whole challenge, the title and context included. Every requirement must be checkable from outside the system by someone who doesn't know what it's built with, using only a client, a clock, a load generator and the power switch. That is what leaves the "how" to the user.
 
 So a requirement names a behavior or a measurable property, never a means. A means is anything the user would choose while building: a language, framework, database or kind of store, cache, queue, broker, protocol or format (HTTP, REST, gRPC, JSON), route, status code, algorithm, data structure, encoding, design pattern, architecture style, deployment or container setup, testing or observability tool, code layout.
 
@@ -49,7 +49,14 @@ When a draft line names a means, replace it with the property that means was sup
 
 The challenge has these sections, in this order:
 
-1. **Title**: the product's name and a one-line description.
+1. **Title**: the project's name and a one-sentence description. The name is usually one or two words and a play on words about what the product does: a pun, a double meaning, a blend of two words or an idiom, in the language of the challenge. It has a second meaning beyond the literal product, one you could explain as a joke. The sentence after it says plainly what the product does for its users.
+
+   | Product | Descriptive name | Play on words |
+   | ------- | ---------------- | ------------- |
+   | URL shortener | ShortLink, url-shortener | Curtiu (short link + "liked it") |
+   | Payments split between sellers | PaySplit | Racha (as in splitting the bill) |
+   | 1v1 matchmaking and ranking | ArenaRank | Mano a Mano |
+   | Book lending across libraries | LibraryNet | Livre Trânsito (free passage, sounds like "livro") |
 2. **Context**: one paragraph. Who uses it, what for, and what makes it hard.
 3. **Scale**: the numbers everything else is measured against. Users, request rates (average and peak), read/write mix, data volume and growth, how long data is kept.
 4. **Functional requirements** (FR1, FR2…): each states what an actor can do, or what the system does when something happens, in domain terms. Give the concrete limits (lengths, ranges, quotas, time windows) and the edge cases that matter: invalid, expired, duplicated, concurrent, not found.
@@ -63,6 +70,7 @@ The reply ends with the acceptance scenarios.
 
 Go through the draft line by line:
 
+- Name the two meanings of the project's name. If you can only name one (what the product does, or how fast it does it, like "Entrega Já"), it's a description: find another name.
 - Could someone verify this line without knowing what the system is built with? If it names a means, rewrite it with the table above.
 - Does every NFR have a number, a unit and a measurement condition? "Fast", "highly available" and "acceptable degradation" are not requirements yet.
 - Do the NFR numbers agree with the Scale section?
