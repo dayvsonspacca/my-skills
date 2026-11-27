@@ -1,0 +1,50 @@
+ticket sales for high-demand concerts
+appointment booking across a network of clinics
+package tracking for a last-mile delivery company
+shared expense splitting between groups of friends
+auction platform with live bidding
+table reservations for a restaurant network
+real-time arrival board for public transport
+inventory across several warehouses
+feature flags service used by other applications
+notification delivery to users across several channels
+loyalty points program for a retail chain
+book lending across a network of public libraries
+prepaid wallet for a university campus
+telemetry from sensors in greenhouses
+leaderboard for a mobile game tournament
+document signing workflow with several signers
+timed online exams for thousands of students
+car-sharing vehicle reservations
+availability of electric vehicle charging stations
+prescription refills for a pharmacy chain
+scheduler for recurring jobs submitted by customers
+audience voting during a live TV show
+price drop alerts for products across online stores
+room inventory for a hotel booking channel
+subscription invoicing with failed-payment retries
+customer support tickets with response-time deadlines
+secret sharing through links that expire after one view
+large file transfer with expiring download links
+gym class booking with waitlists
+national vaccination records registry
+order dispatch to couriers for food delivery
+flash sales for an online store
+comment moderation for a news site
+tamper-evident audit log for compliance
+currency exchange quotes for travelers
+GPS tracking for a truck fleet
+crowdfunding campaigns with pledge goals
+multi-tenant status page for service incidents
+promo code redemption for a marketplace
+dock management for a bike-sharing network
+shift swaps for hospital on-call staff
+grades and report cards for a school district
+web page change monitoring with alerts
+real estate listings with saved searches and alerts
+API usage metering and billing
+check-in for attendees at a large conference
+referral program tracking with rewards
+live sports scores for millions of fans
+finding a common free slot across shared calendars
+parcel locker allocation in apartment buildings
